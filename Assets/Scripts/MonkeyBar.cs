@@ -7,6 +7,7 @@ public class MonkeyBar : MonoBehaviour
 	[SerializeField] private Color newMat = new Color(0,0,255);
 	[SerializeField] private Color oldMat = new Color(0,0,0);
 	[SerializeField] private List<Material> bar;
+	[SerializeField] private Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,16 @@ public class MonkeyBar : MonoBehaviour
     {
         
     }
+
+	void SwingBar()
+	{
+		anim.SetTrigger("Swing");
+	}
+
+	void ReturnBar()
+	{
+		anim.SetTrigger("Return");
+	}
 
 	void LightUp()
 	{
