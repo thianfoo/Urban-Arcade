@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9d2099f6e82a2145b17ecf14adeb6e6
+guid: 7fdcb5acaecb9c04e89245295ada380d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Foregrou
-    second: {fileID: 2100000, guid: 6de08fa6aa499bb4eb0e7152bea68310, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: d3b1d1967348ee6429ae22fc2c2cfe5d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 2abfdb52a3345b44eaaecfd74423de50, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: 9ceaf5e4ac6e69c4188539df1742f4cf, type: 2}
+      name: Ratti
+    second: {fileID: 2100000, guid: 140b3749b04edf046832f576a987c1a5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
