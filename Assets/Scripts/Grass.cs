@@ -4,31 +4,39 @@ using UnityEngine;
 
 public class Grass : MonoBehaviour
 {
+	private float timer;
+	private bool stepped;
+	[SerializeField] private float threshold = 1;
+
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag.Equals("Grass"))
+		if (other.tag.Equals("Feet"))
 		{
-			other.gameObject.SetActive(false);
+			Vanish();
+			stepped = true;
 		}
 	}
 
-	private void OnTriggerExit(Collider other)
+	private void Vanish()
 	{
-		if (other.tag.Equals("Grass"))
-		{
-			other.gameObject.SetActive(true);
-		}
+		GetComponentInChildren<MeshRenderer>().enabled = false;
 	}
 
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
+	private void Appear()
+	{
+		GetComponentInChildren<MeshRenderer>().enabled = true;
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void Update()
+	{
+		if (stepped)
+			timer += Time.deltaTime;
+		else timer = 0;
+
+		if (timer >= threshold)
+		{
+			Appear();
+			stepped = false;
+		}
+	}
 }

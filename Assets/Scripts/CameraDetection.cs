@@ -7,6 +7,7 @@ public class CameraDetection : MonoBehaviour
 	[SerializeField] private GameObject ilpCanvas;
 	[SerializeField] private GameObject mbCanvas;
 	[SerializeField] private GameObject cbCanvas;
+	[SerializeField] private GameObject mistCanvas;
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -20,6 +21,9 @@ public class CameraDetection : MonoBehaviour
 				break;
 			case "CB":
 				cbCanvas.SetActive(true);
+				break;
+			case "Mist":
+				mistCanvas.SetActive(true);
 				break;
 		}
 	}
@@ -36,6 +40,9 @@ public class CameraDetection : MonoBehaviour
 				break;
 			case "CB":
 				cbCanvas.SetActive(false);
+				break;
+			case "Mist":
+				mistCanvas.SetActive(false);
 				break;
 		}
 	}
