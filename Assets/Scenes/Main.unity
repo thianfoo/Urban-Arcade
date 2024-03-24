@@ -17339,7 +17339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model: {fileID: 2108398059}
   Destination: {fileID: 1927689340}
-  speed: 0.1
+  speed: 0.01
 --- !u!4 &2108398064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400120, guid: cea7b4908e889df4ea1487e9f97c3c67,
