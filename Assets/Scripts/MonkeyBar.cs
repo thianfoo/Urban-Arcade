@@ -4,25 +4,17 @@ using UnityEngine;
 
 public class MonkeyBar : MonoBehaviour
 {
-	[SerializeField] private Color newestMat = new Color(0,2,255);
-	[SerializeField] private Color newerMat = new Color(0,1,255);
-	[SerializeField] private Color newMat = new Color(0,0,255);
-	[SerializeField] private Color oldMat = new Color(0,0,0);
+	[SerializeField] private Color defaultMat;
+	[SerializeField] private Color[] colorList;
 	[SerializeField] private List<Material> bar;
 	[SerializeField] private Animator anim;
 	[SerializeField] private GameObject hang;
+	private bool grabbed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void Update()
+	{
+		if (!grabbed) bar[1].color = defaultMat;
+	}
 
 	void SwingBar()
 	{
@@ -36,27 +28,38 @@ public class MonkeyBar : MonoBehaviour
 
 	void LightUp()
 	{
-		for (int i = 0; i < bar.Count; i++)
-		{
-			bar[i].color = newMat;
-		}
+		bar[0].color = colorList[0];
 	}
 
 	void LightOff()
 	{
-		for (int i = 0; i < bar.Count; i++)
-		{
-			bar[i].color = oldMat;
-		}
+		bar[0].color = defaultMat;
 	}
 
-	void LightChange()
+	void LightChange1()
 	{
-		for (int i = 0; i < bar.Count; i++)
-		{
-			newerMat = new Color(Mathf.Lerp(255,0,1),1,255);
-			bar[i].color = newerMat;
-		}
+		bar[1].color = colorList[0];
+		grabbed = true;
+	}
+
+	void LightChange2()
+	{
+		bar[1].color = colorList[1];
+	}
+
+	void LightChange3()
+	{
+		bar[1].color = colorList[2];
+	}
+
+	void LightChange4()
+	{
+		bar[1].color = colorList[3];
+	}
+
+	void LightChange5()
+	{
+		bar[1].color = colorList[4];
 	}
 
 	void EnableHang()
@@ -67,5 +70,6 @@ public class MonkeyBar : MonoBehaviour
 	void DisableHang()
 	{
 		hang.SetActive(false);
+		grabbed = false;
 	}
 }
