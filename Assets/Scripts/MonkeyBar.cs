@@ -6,14 +6,15 @@ public class MonkeyBar : MonoBehaviour
 {
 	[SerializeField] private Color defaultMat;
 	[SerializeField] private Color[] colorList;
-	[SerializeField] private List<Material> bar;
+	[SerializeField] private List<Material> barMat;
+	[SerializeField] private List<GameObject> bar;
 	[SerializeField] private Animator anim;
 	[SerializeField] private GameObject hang;
 	private bool grabbed;
 
 	private void Update()
 	{
-		if (!grabbed) bar[1].color = defaultMat;
+		if (!grabbed) barMat[1].color = defaultMat;
 	}
 
 	void SwingBar()
@@ -26,40 +27,52 @@ public class MonkeyBar : MonoBehaviour
 		anim.SetTrigger("Return");
 	}
 
+	void DisplayBar1()
+	{
+		bar[0].SetActive(true);
+		bar[1].SetActive(false);
+	}
+
+	void DisplayBar2()
+	{
+		bar[0].SetActive(false);
+		bar[1].SetActive(true);
+	}
+
 	void LightUp()
 	{
-		bar[0].color = colorList[0];
+		barMat[0].color = colorList[0];
 	}
 
 	void LightOff()
 	{
-		bar[0].color = defaultMat;
+		barMat[0].color = defaultMat;
 	}
 
 	void LightChange1()
 	{
-		bar[1].color = colorList[0];
+		barMat[1].color = colorList[0];
 		grabbed = true;
 	}
 
 	void LightChange2()
 	{
-		bar[1].color = colorList[1];
+		barMat[1].color = colorList[1];
 	}
 
 	void LightChange3()
 	{
-		bar[1].color = colorList[2];
+		barMat[1].color = colorList[2];
 	}
 
 	void LightChange4()
 	{
-		bar[1].color = colorList[3];
+		barMat[1].color = colorList[3];
 	}
 
 	void LightChange5()
 	{
-		bar[1].color = colorList[4];
+		barMat[1].color = colorList[4];
 	}
 
 	void EnableHang()
